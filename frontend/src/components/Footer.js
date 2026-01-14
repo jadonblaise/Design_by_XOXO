@@ -41,7 +41,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex space-x-4 mb-4">
               <a 
-                href="https://instagram.com/design.by.xoxo?igsh=MWZjbXNjMXI2MGxpaw==" 
+                href="https://www.instagram.com/designs.by.xoxo?igsh=MWZjbXNjMXl2MGxpaw==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
