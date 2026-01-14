@@ -25,13 +25,34 @@ if FRONTEND_URL:
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Use Render's database URL if available, otherwise use SQLite
-DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL', 'sqlite:///db.sqlite3'),
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
-}
+# During build phase, DATABASE_URL might not be set, so we handle that gracefully
+database_url = os.getenv('DATABASE_URL', '').strip()
+if database_url and database_url != '':
+    try:
+        DATABASES = {
+            'default': dj_database_url.config(
+                default=database_url,
+                conn_max_age=600,
+                conn_health_checks=True,
+            )
+        }
+    except (ValueError, Exception) as e:
+        # If database URL parsing fails, fallback to SQLite
+        print(f"Warning: Could not parse DATABASE_URL, using SQLite: {e}")
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+else:
+    # Fallback to SQLite if DATABASE_URL is not set (e.g., during build)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Security settings
 SECURE_SSL_REDIRECT = True
@@ -56,7 +77,8 @@ if not CORS_ALLOWED_ORIGINS:
 
 # Static files with WhiteNoise
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# Note: STATICFILES_STORAGE is set via STORAGES below (Django 5.0+)
+# Don't set both STATICFILES_STORAGE and STORAGES - they're mutually exclusive
 
 # Media files (if using S3 or similar, configure here)
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -96,7 +118,7 @@ STORAGES = {
 
 # Add database connection options for better performance on Render free tier
 # Only if we're using PostgreSQL (not SQLite)
-if database_url and DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
+if DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
     if 'OPTIONS' not in DATABASES['default']:
         DATABASES['default']['OPTIONS'] = {}
     DATABASES['default']['OPTIONS'].update({
