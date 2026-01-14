@@ -33,26 +33,44 @@ const Footer = () => {
               <li><a href="#about" className="hover:text-emerald-500 transition">About Us</a></li>
               <li><a href="#why-us" className="hover:text-emerald-500 transition">Why Choose Us</a></li>
               <li><a href="#contact" className="hover:text-emerald-500 transition">Contact</a></li>
-              <li><a href="#" className="hover:text-emerald-500 transition">Shipping Info</a></li>
+              <li><a href="#products" className="hover:text-emerald-500 transition">Shipping Info</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex space-x-4 mb-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition">
+              <a 
+                href="https://instagram.com/design.by.xoxo?igsh=MWZjbXNjMXI2MGxpaw==" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow us on Instagram"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow us on Facebook"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition">
+              <a 
+                href="https://twitter.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow us on Twitter"
+                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-600 transition"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
             </div>
             <p className="text-gray-400 text-sm">
               Email: info@designbyxoxo.com<br />
-              Phone: +1 (555) 123-4567
+              Phone: +234 816 499 7960
             </p>
           </div>
         </div>
