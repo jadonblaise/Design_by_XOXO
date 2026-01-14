@@ -61,6 +61,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Add WhiteNoise middleware only in production (Render)
+if os.getenv('RENDER', '').lower() == 'true':
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+
 # CORS settings
 CORS_ALLOWED_ORIGINS = [origin.strip() for origin in os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')]
 CORS_ALLOW_CREDENTIALS = True
@@ -150,3 +154,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 12
 }
+
+# Detect if running on Render and use production settings
+# This must be at the end after all base settings are defined
+if os.getenv('RENDER', '').lower() == 'true':
+    try:
+        from .settings_production import *
+    except ImportError:
+        pass
