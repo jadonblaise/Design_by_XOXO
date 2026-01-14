@@ -94,26 +94,12 @@ STORAGES = {
     },
 }
 
-# Database configuration with connection pooling for Render free tier
-db_config = dj_database_url.config(
-    default=os.environ.get('DATABASE_URL'),
-    conn_max_age=600,  # Keep connections alive for 10 minutes
-    conn_health_checks=True,  # Enable connection health checks
-)
-
-DATABASES = {
-    'default': db_config
-}
-
 # Add database connection options for better performance on Render free tier
-if db_config and 'OPTIONS' not in db_config:
-    DATABASES['default']['OPTIONS'] = {}
-    
-# Set connection timeout and statement timeout
-if 'OPTIONS' in DATABASES['default']:
+# Only if we're using PostgreSQL (not SQLite)
+if database_url and DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
+    if 'OPTIONS' not in DATABASES['default']:
+        DATABASES['default']['OPTIONS'] = {}
     DATABASES['default']['OPTIONS'].update({
         'connect_timeout': 10,
+        'options': '-c statement_timeout=30000'
     })
-    # For PostgreSQL, add statement timeout
-    if 'options' not in DATABASES['default']['OPTIONS']:
-        DATABASES['default']['OPTIONS']['options'] = '-c statement_timeout=30000'
