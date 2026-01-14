@@ -5,6 +5,7 @@ This file extends base settings with production-specific configurations.
 from .settings import *
 import dj_database_url
 import os
+import sys
 
 # Security settings for production
 DEBUG = False
@@ -27,7 +28,21 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # Use Render's database URL if available, otherwise use SQLite
 # During build phase, DATABASE_URL might not be set, so we handle that gracefully
 database_url = os.getenv('DATABASE_URL', '').strip()
-if database_url and database_url != '':
+
+# Check if we're in build phase (collectstatic) - use SQLite to avoid psycopg2 import issues
+# During build, DATABASE_URL might be set but psycopg2 may not work with Python 3.13
+is_build_phase = len(sys.argv) > 1 and 'collectstatic' in sys.argv
+
+if is_build_phase:
+    # Build phase or no DATABASE_URL - use SQLite
+    # This prevents psycopg2 import errors during build phase
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+elif database_url and database_url != '':
     try:
         DATABASES = {
             'default': dj_database_url.config(
@@ -36,6 +51,19 @@ if database_url and database_url != '':
                 conn_health_checks=True,
             )
         }
+        # Verify the database engine is valid
+        if DATABASES['default'].get('ENGINE') == 'django.db.backends.postgresql':
+            # Test if psycopg2 can be imported (only at runtime, not during build)
+            try:
+                import psycopg2
+            except ImportError:
+                print("Warning: psycopg2 not available, falling back to SQLite")
+                DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.sqlite3',
+                        'NAME': BASE_DIR / 'db.sqlite3',
+                    }
+                }
     except (ValueError, Exception) as e:
         # If database URL parsing fails, fallback to SQLite
         print(f"Warning: Could not parse DATABASE_URL, using SQLite: {e}")
@@ -46,7 +74,7 @@ if database_url and database_url != '':
             }
         }
 else:
-    # Fallback to SQLite if DATABASE_URL is not set (e.g., during build)
+    # Fallback to SQLite if DATABASE_URL is not set
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
