@@ -11,7 +11,7 @@ const FeaturedStyles = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer h-96 border-4 border-luxury-gold/30">
             <img 
-              src="https://ideogram.ai/assets/image/lossless/response/BLhayjgCQZCEpbFeVHS7Dw@2k" 
+              src="https://images.unsplash.com/photo-1649525663526-01467119a796?q=80&w=1039&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="African print style"
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
@@ -25,7 +25,7 @@ const FeaturedStyles = () => {
 
           <div className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer h-96 border-4 border-luxury-gold/30">
             <img 
-              src="https://ideogram.ai/assets/image/lossless/response/GzMJA799Ri2UibPeQJk7Aw@2k" 
+              src="https://images.unsplash.com/photo-1618998584360-10a0c28eec0f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Event wear style"
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
@@ -39,7 +39,7 @@ const FeaturedStyles = () => {
 
           <div className="group relative overflow-hidden rounded-2xl shadow-xl cursor-pointer h-96 border-4 border-luxury-gold/30">
             <img 
-              src="https://ideogram.ai/assets/image/lossless/response/PNRRxZj0SdmeXLoW_PHzJw@2k" 
+              src="https://images.unsplash.com/flagged/photo-1578905326519-3aa98aa6a728?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Casual style"
               className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             />
