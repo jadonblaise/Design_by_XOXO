@@ -5,6 +5,7 @@ import FeaturedStyles from './components/FeaturedStyles';
 import AboutSection from './components/AboutSection';
 import ProductGrid from './components/ProductGrid';
 import WhyUsSection from './components/WhyUsSection';
+import TrainingsSection from './components/TrainingsSection';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import SearchBar from './components/SearchBar';
@@ -149,6 +150,8 @@ function App() {
       />
       
       <WhyUsSection />
+
+      <TrainingsSection />
       
       <Footer />
     </div>

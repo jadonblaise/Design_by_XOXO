@@ -18,7 +18,15 @@ const Navigation = ({
     <nav className="fixed w-full bg-luxury-dark/95 backdrop-blur-sm shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <button
+            type="button"
+            onClick={() => {
+              // Force a full refresh back to the homepage (not just scrolling).
+              window.location.assign(process.env.PUBLIC_URL || '/');
+            }}
+            className="flex items-center text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gold rounded-lg"
+            aria-label="Go to homepage"
+          >
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-luxury-gold/70 shadow-md">
               <img
                 src={logo}
@@ -29,13 +37,14 @@ const Navigation = ({
             <span className="ml-2 text-lg sm:text-2xl font-bold bg-gradient-to-r from-luxury-gold to-luxury-bronze bg-clip-text text-transparent leading-tight">
               Designs by XOXO
             </span>
-          </div>
+          </button>
           
           <div className="hidden md:flex space-x-8">
             <a href="#home" className="text-luxury-cream hover:text-luxury-gold transition">Home</a>
             <a href="#products" className="text-luxury-cream hover:text-luxury-gold transition">Shop</a>
             <a href="#about" className="text-luxury-cream hover:text-luxury-gold transition">About</a>
             <a href="#why-us" className="text-luxury-cream hover:text-luxury-gold transition">Why Us</a>
+            <a href="#trainings" className="text-luxury-cream hover:text-luxury-gold transition">Trainings</a>
             <a href="#contact" className="text-luxury-cream hover:text-luxury-gold transition">Contact</a>
           </div>
 
@@ -103,6 +112,7 @@ const Navigation = ({
             <a href="#products" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Shop</a>
             <a href="#about" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">About</a>
             <a href="#why-us" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Why Us</a>
+            <a href="#trainings" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Trainings</a>
             <a href="#contact" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Contact</a>
             <div className="px-3 py-2">
               <select 
