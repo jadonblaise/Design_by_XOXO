@@ -3,6 +3,11 @@
 
 set -o errexit  # Exit on error
 
+if [[ "${RENDER}" == "true" || -n "${RENDER_EXTERNAL_HOSTNAME}" ]]; then
+  # Ensure management commands run with production settings on Render
+  export DJANGO_SETTINGS_MODULE="fashion_store.settings_production"
+fi
+
 echo "Upgrading pip, setuptools, and wheel..."
 pip install --upgrade pip setuptools wheel
 
@@ -14,5 +19,8 @@ python manage.py collectstatic --noinput
 
 echo "Running migrations..."
 python manage.py migrate --noinput
+
+echo "Ensuring Django admin user (if env vars provided)..."
+python manage.py ensure_admin
 
 echo "Build completed successfully!"

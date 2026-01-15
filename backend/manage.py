@@ -6,7 +6,14 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fashion_store.settings')
+    # Use production settings on Render to ensure migrations/createsuperuser
+    # operate on the same database/config as the running service.
+    settings_module = (
+        'fashion_store.settings_production'
+        if ('RENDER_EXTERNAL_HOSTNAME' in os.environ or os.getenv('RENDER', '').lower() == 'true')
+        else 'fashion_store.settings'
+    )
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

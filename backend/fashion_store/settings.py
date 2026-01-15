@@ -155,10 +155,6 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 12
 }
 
-# Detect if running on Render and use production settings
-# This must be at the end after all base settings are defined
-if os.getenv('RENDER', '').lower() == 'true':
-    try:
-        from .settings_production import *
-    except ImportError:
-        pass
+# NOTE:
+# Production settings are in `fashion_store/settings_production.py`.
+# We intentionally do NOT import them here to avoid circular imports.
