@@ -129,6 +129,7 @@ function App() {
         removeFromCart={removeFromCart}
         cartTotal={cartTotal}
         currency={currency}
+        setCurrency={setCurrency}
       />
 
       <HeroSlider />

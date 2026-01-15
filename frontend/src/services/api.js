@@ -1,8 +1,24 @@
 import axios from 'axios';
 
-// Use proxy if available (for development), otherwise use full URL
-// The proxy in package.json forwards /api/* to http://localhost:8000/api/*
-const API_URL = process.env.REACT_APP_API_URL || '/api';
+/**
+ * API base URL:
+ * - Local dev (CRA proxy): default to "/api"
+ * - Production: set REACT_APP_API_URL to your backend Render URL, e.g.
+ *   "https://<your-backend>.onrender.com/api"
+ *
+ * Note: if REACT_APP_API_URL is not set in production, "/api" will hit the
+ * frontend origin (and won't reach your separate backend service).
+ */
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (process.env.NODE_ENV === 'production' ? '/api' : '/api');
+
+if (process.env.NODE_ENV === 'production' && !process.env.REACT_APP_API_URL) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    'REACT_APP_API_URL is not set. Set it to your backend URL (e.g. https://<backend>.onrender.com/api) to load products in production.'
+  );
+}
 
 const api = axios.create({
   baseURL: API_URL,

@@ -1,6 +1,6 @@
 // ===== Footer.js =====
 import React from 'react';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, MapPin } from 'lucide-react';
 import Design_by_xoxo_logo from '../images/Design_by_xoxo_logo.png';
 
 const WhatsAppIcon = ({ className = '' }) => (
@@ -93,6 +93,12 @@ const Footer = () => {
               Email: info@designbyxoxo.com<br />
               Phone: +234 816 499 7960
             </p>
+            <div className="mt-4 flex items-start gap-3 text-luxury-cream/90 text-sm">
+              <MapPin className="w-5 h-5 text-luxury-gold mt-0.5" aria-hidden="true" />
+              <span>
+                Address: Lagos, Nigeria
+              </span>
+            </div>
           </div>
         </div>
         
