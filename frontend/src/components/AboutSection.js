@@ -15,7 +15,9 @@ const AboutSection = () => {
             />
           </div>
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-luxury-dark">About Design by XOXO</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-luxury-dark">
+              About Design by XOXO
+            </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-luxury-gold to-luxury-bronze mb-6"></div>
             <p className="text-luxury-brown text-lg leading-relaxed mb-4">
               Hi! I am Maryann Chisom Chukwu. I am a fashion designer and a fashion blogger. I am passionate about bringing you the finest collection of women's wear that celebrates diversity, authenticity, and timeless style.
