@@ -1,5 +1,6 @@
 import React from 'react';
-import { Award, BookOpen, CalendarDays, GraduationCap, MessageCircle, Users } from 'lucide-react';
+import { Award, BookOpen, CalendarDays, GraduationCap, Users } from 'lucide-react';
+import WhatsAppIcon from './icons/WhatsAppIcon';
 
 const TrainingsSection = () => {
   const tracks = [
@@ -29,7 +30,7 @@ const TrainingsSection = () => {
   const meta = [
     { icon: <CalendarDays className="w-6 h-6" />, label: 'Flexible schedule', value: 'Weekdays / Weekends' },
     { icon: <Users className="w-6 h-6" />, label: 'Class size', value: 'Small groups' },
-    { icon: <MessageCircle className="w-6 h-6" />, label: 'Support', value: 'WhatsApp guidance' },
+    { icon: <WhatsAppIcon className="w-6 h-6" />, label: 'Support', value: 'WhatsApp guidance' },
   ];
 
   return (
@@ -105,7 +106,7 @@ const TrainingsSection = () => {
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-luxury-gold to-luxury-bronze text-white px-8 py-4 rounded-full font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition focus:outline-none focus:ring-2 focus:ring-luxury-gold"
               aria-label="Chat on WhatsApp about trainings"
             >
-              <MessageCircle className="w-5 h-5" />
+              <WhatsAppIcon className="w-5 h-5" />
               Chat on WhatsApp
             </a>
           </div>

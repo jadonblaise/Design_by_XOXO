@@ -24,7 +24,7 @@ const Navigation = ({
               // Force a full refresh back to the homepage (not just scrolling).
               window.location.assign(process.env.PUBLIC_URL || '/');
             }}
-            className="flex items-center text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gold rounded-lg"
+            className="flex items-center gap-3 md:gap-2 text-left cursor-pointer focus:outline-none focus:ring-2 focus:ring-luxury-gold rounded-lg py-1"
             aria-label="Go to homepage"
           >
             <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-luxury-gold/70 shadow-md">
@@ -34,8 +34,10 @@ const Navigation = ({
                 className="w-full h-full object-cover scale-125"
               />
             </div>
-            <span className="ml-2 text-lg sm:text-2xl font-bold bg-gradient-to-r from-luxury-gold to-luxury-bronze bg-clip-text text-transparent leading-tight">
-              Designs by XOXO
+            <span className="flex flex-col items-start text-sm sm:text-base md:text-base font-bold leading-[0.95] md:leading-[0.75] md:tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold to-luxury-bronze">
+              <span className="block">Design</span>
+              <span className="block">by</span>
+              <span className="block">xoxo</span>
             </span>
           </button>
           
