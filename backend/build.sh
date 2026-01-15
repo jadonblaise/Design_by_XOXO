@@ -23,4 +23,7 @@ python manage.py migrate --noinput
 echo "Ensuring Django admin user (if env vars provided)..."
 python manage.py ensure_admin
 
+echo "Loading sample data..."
+python manage.py load_sample_data
+
 echo "Build completed successfully!"
