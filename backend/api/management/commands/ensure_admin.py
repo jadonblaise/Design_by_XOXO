@@ -9,23 +9,39 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """
-        Expected env vars:
-          - ADMIN_USERNAME
-          - ADMIN_EMAIL (optional but recommended)
-          - ADMIN_PASSWORD
+        Supported env vars (either style works):
+          - Preferred:
+              - ADMIN_USERNAME
+              - ADMIN_EMAIL (optional but recommended)
+              - ADMIN_PASSWORD
+          - Also supported (common in tutorials):
+              - DJANGO_SUPERUSER_USERNAME
+              - DJANGO_SUPERUSER_EMAIL (optional)
+              - DJANGO_SUPERUSER_PASSWORD
+
+        Optional toggle:
+          - CREATE_SUPERUSER=True/False
+            If set to a falsy value, this command will do nothing.
 
         This command is idempotent:
           - If user doesn't exist, it will create a superuser.
           - If user exists, it will ensure is_staff/is_superuser and update password.
         """
-        username = (os.getenv("ADMIN_USERNAME") or "").strip()
-        email = (os.getenv("ADMIN_EMAIL") or "").strip()
-        password = os.getenv("ADMIN_PASSWORD") or ""
+        create_toggle = (os.getenv("CREATE_SUPERUSER") or "").strip().lower()
+        if create_toggle in {"0", "false", "no", "off"}:
+            self.stdout.write(self.style.WARNING("Skipping ensure_admin: CREATE_SUPERUSER is disabled."))
+            return
+
+        username = (
+            (os.getenv("ADMIN_USERNAME") or os.getenv("DJANGO_SUPERUSER_USERNAME") or "").strip()
+        )
+        email = (os.getenv("ADMIN_EMAIL") or os.getenv("DJANGO_SUPERUSER_EMAIL") or "").strip()
+        password = os.getenv("ADMIN_PASSWORD") or os.getenv("DJANGO_SUPERUSER_PASSWORD") or ""
 
         if not username or not password:
             self.stdout.write(
                 self.style.WARNING(
-                    "Skipping ensure_admin: set ADMIN_USERNAME and ADMIN_PASSWORD env vars to enable."
+                    "Skipping ensure_admin: set ADMIN_USERNAME/ADMIN_PASSWORD (or DJANGO_SUPERUSER_USERNAME/DJANGO_SUPERUSER_PASSWORD) to enable."
                 )
             )
             return
