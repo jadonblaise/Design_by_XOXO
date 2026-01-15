@@ -26,7 +26,7 @@ const Navigation = ({
                 className="w-full h-full object-cover scale-125"
               />
             </div>
-            <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-luxury-gold to-luxury-bronze bg-clip-text text-transparent">
+            <span className="ml-2 text-lg sm:text-2xl font-bold bg-gradient-to-r from-luxury-gold to-luxury-bronze bg-clip-text text-transparent leading-tight">
               Designs by XOXO
             </span>
           </div>
