@@ -6,6 +6,14 @@ import { convertPrice } from '../utils/currency';
 const SearchBar = ({ searchOpen, setSearchOpen, searchQuery, setSearchQuery, products, currency }) => {
   if (!searchOpen) return null;
 
+  const goToProducts = () => {
+    setSearchOpen(false);
+    // Let the modal close before scrolling
+    setTimeout(() => {
+      document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+  };
+
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm" onClick={() => setSearchOpen(false)}>
       <div className="max-w-3xl mx-auto mt-24 px-4" onClick={(e) => e.stopPropagation()}>
@@ -22,10 +30,8 @@ const SearchBar = ({ searchOpen, setSearchOpen, searchQuery, setSearchQuery, pro
             />
             <button 
               onClick={() => {
+                if (searchQuery) return goToProducts();
                 setSearchOpen(false);
-                if (searchQuery) {
-                  document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
-                }
               }}
               className="text-luxury-brown hover:text-luxury-dark transition"
             >
@@ -39,13 +45,19 @@ const SearchBar = ({ searchOpen, setSearchOpen, searchQuery, setSearchQuery, pro
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
                 {products.slice(0, 6).map(product => (
-                  <div key={product.id} className="cursor-pointer hover:shadow-lg transition rounded-lg overflow-hidden bg-white border border-luxury-gold/20">
+                  <button
+                    key={product.id}
+                    type="button"
+                    onClick={goToProducts}
+                    className="text-left cursor-pointer hover:shadow-lg transition rounded-lg overflow-hidden bg-white border border-luxury-gold/20 focus:outline-none focus:ring-2 focus:ring-luxury-gold"
+                    aria-label={`View ${product.name} in products`}
+                  >
                     <img src={product.image} alt={product.name} className="w-full h-32 object-cover" />
                     <div className="p-2">
                       <p className="text-sm font-semibold truncate text-luxury-dark">{product.name}</p>
                       <p className="text-luxury-gold font-bold">{convertPrice(parseFloat(product.price), currency)}</p>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
