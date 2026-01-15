@@ -1,6 +1,7 @@
 import React from 'react';
-import { ShoppingBag, ShoppingCart, Search, Menu, X } from 'lucide-react';
+import {ShoppingCart, Search, Menu, X } from 'lucide-react';
 import { currencies } from '../utils/currency';
+import logo from '../images/Design_by_xoxo_logo.png';
 
 const Navigation = ({ 
   mobileMenuOpen, 
@@ -14,22 +15,28 @@ const Navigation = ({
   setSearchOpen 
 }) => {
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed w-full bg-luxury-dark/95 backdrop-blur-sm shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <ShoppingBag className="w-8 h-8 text-emerald-600" />
-            <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-              Design by XOXO
+            <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-luxury-gold/70 shadow-md">
+              <img
+                src={logo}
+                alt="Design by XOXO"
+                className="w-full h-full object-cover scale-125"
+              />
+            </div>
+            <span className="ml-2 text-2xl font-bold bg-gradient-to-r from-luxury-gold to-luxury-bronze bg-clip-text text-transparent">
+              Designs by XOXO
             </span>
           </div>
           
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-emerald-600 transition">Home</a>
-            <a href="#products" className="text-gray-700 hover:text-emerald-600 transition">Shop</a>
-            <a href="#about" className="text-gray-700 hover:text-emerald-600 transition">About</a>
-            <a href="#why-us" className="text-gray-700 hover:text-emerald-600 transition">Why Us</a>
-            <a href="#contact" className="text-gray-700 hover:text-emerald-600 transition">Contact</a>
+            <a href="#home" className="text-luxury-cream hover:text-luxury-gold transition">Home</a>
+            <a href="#products" className="text-luxury-cream hover:text-luxury-gold transition">Shop</a>
+            <a href="#about" className="text-luxury-cream hover:text-luxury-gold transition">About</a>
+            <a href="#why-us" className="text-luxury-cream hover:text-luxury-gold transition">Why Us</a>
+            <a href="#contact" className="text-luxury-cream hover:text-luxury-gold transition">Contact</a>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -38,16 +45,16 @@ const Navigation = ({
               <select 
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
-                className="appearance-none bg-emerald-50 text-gray-700 px-3 py-2 pr-8 rounded-lg font-semibold cursor-pointer hover:bg-emerald-100 transition focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="appearance-none bg-luxury-gold/20 text-luxury-cream px-3 py-2 pr-8 rounded-lg font-semibold cursor-pointer hover:bg-luxury-gold/30 transition focus:outline-none focus:ring-2 focus:ring-luxury-gold"
               >
                 {Object.keys(currencies).map(curr => (
-                  <option key={curr} value={curr}>
+                  <option key={curr} value={curr} className="bg-luxury-dark text-luxury-cream">
                     {currencies[curr].flag} {curr}
                   </option>
                 ))}
               </select>
               <div className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-luxury-cream" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
@@ -56,21 +63,21 @@ const Navigation = ({
             {/* Search Button */}
             <button 
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2 hover:bg-emerald-50 rounded-full transition"
+              className="p-2 hover:bg-luxury-gold/20 rounded-full transition"
               aria-label="Search"
             >
-              <Search className="w-6 h-6 text-gray-700" />
+              <Search className="w-6 h-6 text-luxury-cream" />
             </button>
 
             {/* Cart Button */}
             <button 
               onClick={() => setCartOpen(!cartOpen)}
-              className="relative p-2 hover:bg-emerald-50 rounded-full transition"
+              className="relative p-2 hover:bg-luxury-gold/20 rounded-full transition"
               aria-label="Shopping cart"
             >
-              <ShoppingCart className="w-6 h-6 text-gray-700" />
+              <ShoppingCart className="w-6 h-6 text-luxury-cream" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-emerald-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-luxury-gold text-luxury-dark text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                   {cartCount}
                 </span>
               )}
@@ -78,7 +85,7 @@ const Navigation = ({
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden"
+              className="md:hidden text-luxury-cream"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menu"
             >
@@ -90,21 +97,21 @@ const Navigation = ({
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden bg-luxury-dark border-t border-luxury-gold/30">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="#home" className="block px-3 py-2 text-gray-700 hover:bg-emerald-50 rounded">Home</a>
-            <a href="#products" className="block px-3 py-2 text-gray-700 hover:bg-emerald-50 rounded">Shop</a>
-            <a href="#about" className="block px-3 py-2 text-gray-700 hover:bg-emerald-50 rounded">About</a>
-            <a href="#why-us" className="block px-3 py-2 text-gray-700 hover:bg-emerald-50 rounded">Why Us</a>
-            <a href="#contact" className="block px-3 py-2 text-gray-700 hover:bg-emerald-50 rounded">Contact</a>
+            <a href="#home" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Home</a>
+            <a href="#products" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Shop</a>
+            <a href="#about" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">About</a>
+            <a href="#why-us" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Why Us</a>
+            <a href="#contact" className="block px-3 py-2 text-luxury-cream hover:bg-luxury-gold/20 rounded">Contact</a>
             <div className="px-3 py-2">
               <select 
                 value={currency}
                 onChange={(e) => setCurrency(e.target.value)}
-                className="w-full bg-emerald-50 text-gray-700 px-3 py-2 rounded-lg font-semibold"
+                className="w-full bg-luxury-gold/20 text-luxury-cream px-3 py-2 rounded-lg font-semibold"
               >
                 {Object.keys(currencies).map(curr => (
-                  <option key={curr} value={curr}>
+                  <option key={curr} value={curr} className="bg-luxury-dark">
                     {currencies[curr].flag} {curr}
                   </option>
                 ))}
