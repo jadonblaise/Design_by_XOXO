@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-luxury-gold/30 pt-8 text-center text-luxury-cream/60">
-          <p>&copy; 2024 Design by XOXO. All rights reserved. Designed with love.</p>
+          <p>&copy; 2025 Designs by xoxo. All rights reserved. Designed with love.</p>
         </div>
       </div>
     </footer>
