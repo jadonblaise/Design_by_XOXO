@@ -34,10 +34,11 @@ const Navigation = ({
                 className="w-full h-full object-cover scale-125"
               />
             </div>
-            <span className="flex flex-col items-start text-sm sm:text-base md:text-base font-bold leading-[0.95] md:leading-[0.75] md:tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold to-luxury-bronze">
-              <span className="block">Design</span>
-              <span className="block">by</span>
-              <span className="block">xoxo</span>
+            <span className="flex flex-col items-start text-base md:text-base font-bold leading-[0.95] md:leading-[0.75] md:tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-luxury-gold to-luxury-bronze">
+              <span className="block">Designs</span>
+              <span className="block text-base md:text-base font-semibold leading-[0.95] md:leading-[0.75]">
+                by xoxo
+              </span>
             </span>
           </button>
           

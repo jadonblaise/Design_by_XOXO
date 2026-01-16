@@ -19,9 +19,8 @@ const Footer = () => {
                 />
               </div>
               <span className="flex flex-col items-start text-sm sm:text-base md:text-base font-bold text-luxury-gold leading-[0.95] md:leading-[0.75] md:tracking-tight">
-                <span className="block">Design</span>
-                <span className="block">by</span>
-                <span className="block">xoxo</span>
+                <span className="block">Designs</span>
+                <span className="block">by xoxo</span>
               </span>
             </div>
             <p className="text-luxury-cream/80">
