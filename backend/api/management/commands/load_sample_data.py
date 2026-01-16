@@ -34,15 +34,15 @@ class Command(BaseCommand):
                 'description': 'Beautiful Ankara print maxi dress perfect for any occasion',
                 'price': 89.99,
                 'category': african,
-                'image': 'https://images.unsplash.com/photo-1617019114583-affb34d1b3cd?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1601653233006-5c9fd30eab12?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 15
             },
             {
                 'name': 'Kente Print Blazer',
                 'description': 'Elegant Kente pattern blazer for formal occasions',
-                'price': 129.99,
+                'price': 69.99,
                 'category': african,
-                'image': 'https://images.unsplash.com/photo-1610652492500-ded49c4f4a28?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1610522983738-d935e6f1e0eb?q=80&w=986&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 10
             },
             {
@@ -50,23 +50,23 @@ class Command(BaseCommand):
                 'description': 'Stylish African print jumpsuit for the modern woman',
                 'price': 94.99,
                 'category': african,
-                'image': 'https://images.unsplash.com/photo-1583327171004-91e52283f61e?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1673227527020-cdc9bd479001?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 12
             },
             {
-                'name': 'Casual White Tee',
-                'description': 'Classic white casual tee for everyday wear',
+                'name': 'Casual African culture gown',
+                'description': 'Classic African culture gown for everyday wear',
                 'price': 29.99,
                 'category': casual,
-                'image': 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1709809081557-78f803ce93a0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 25
             },
             {
-                'name': 'Denim Jacket',
-                'description': 'Trendy denim jacket perfect for casual outings',
+                'name': 'Ankara Maxi Dress',
+                'description': 'Trendy Ankara maxi dress perfect for casual outings',
                 'price': 79.99,
                 'category': casual,
-                'image': 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1663044023009-cfdb6dd6b89c?q=80&w=1007&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 18
             },
             {
@@ -74,55 +74,55 @@ class Command(BaseCommand):
                 'description': 'Light summer dress for hot days',
                 'price': 59.99,
                 'category': casual,
-                'image': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1636342518291-92b11558b405?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 20
             },
             {
                 'name': 'Elegant Evening Gown',
                 'description': 'Stunning evening gown for special occasions',
-                'price': 199.99,
+                'price': 47.99,
                 'category': event,
-                'image': 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1747172556919-80fbcd20d32e?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 8
             },
             {
                 'name': 'Cocktail Dress',
                 'description': 'Chic cocktail dress for parties',
-                'price': 149.99,
+                'price': 37.99,
                 'category': event,
-                'image': 'https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1747171503581-2fbc57455b09?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 10
             },
             {
                 'name': 'Sequin Party Dress',
                 'description': 'Glamorous sequin dress for night events',
-                'price': 179.99,
+                'price': 27.99,
                 'category': event,
-                'image': 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1652092956602-8da6348b986f?q=80&w=1046&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 7
             },
             {
                 'name': 'Wax Print Skirt Set',
                 'description': 'Traditional wax print skirt set',
-                'price': 109.99,
+                'price': 57.99,
                 'category': african,
-                'image': 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1550835002-8621fdda0461?q=80&w=1041&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 14
             },
             {
-                'name': 'Casual Joggers Set',
-                'description': 'Comfortable joggers set for relaxing',
+                'name': 'Ankara Hair Wrap',
+                'description': 'Comfortable Ankara hair wrap for relaxing',
                 'price': 69.99,
                 'category': casual,
-                'image': 'https://images.unsplash.com/photo-1580904449184-e1a93d7d8082?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1649967322800-5f215ed89863?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 22
             },
             {
                 'name': 'Formal Ball Gown',
                 'description': 'Luxurious formal ball gown',
-                'price': 249.99,
+                'price': 34.99,
                 'category': event,
-                'image': 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&h=600&fit=crop',
+                'image': 'https://images.unsplash.com/photo-1538650403596-09e4be7c094b?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'stock': 5
             }
         ]
