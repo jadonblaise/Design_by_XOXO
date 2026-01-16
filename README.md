@@ -303,6 +303,23 @@ npm run build
 
 The production build will be in the `frontend/build/` directory.
 
+## Deployment to Render
+
+This project includes configuration files for deploying to Render. See [RENDER_DEPLOYMENT.md](./RENDER_DEPLOYMENT.md) for detailed deployment instructions.
+
+**Quick Start:**
+1. Push your code to GitHub
+2. Connect your repository to Render
+3. Use the `render.yaml` file for automatic configuration
+4. Set environment variables in Render dashboard
+5. Deploy!
+
+**Files included for Render:**
+- `render.yaml` - Render service configuration
+- `backend/Procfile` - Process file for backend
+- `backend/build.sh` - Build script
+- `backend/fashion_store/settings_production.py` - Production settings
+
 ## Environment Variables Reference
 
 ### Backend (.env)
