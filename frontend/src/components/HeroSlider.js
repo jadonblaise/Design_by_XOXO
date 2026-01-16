@@ -5,25 +5,25 @@ const HeroSlider = () => {
 
   const heroSlides = [
     {
-      image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1600&h=900&fit=crop",
+      image: "https://images.unsplash.com/photo-1681545303529-b6beb2e19f02?q=80&w=2058&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "African Heritage Collection",
       subtitle: "Vibrant prints that celebrate culture and style",
       cta: "Shop African Prints"
     },
     {
-      image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&h=900&fit=crop",
+      image: "https://images.unsplash.com/photo-1596015301017-471ad3599a30?q=80&w=990&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Elegant Event Wear",
       subtitle: "Make every occasion unforgettable",
       cta: "Explore Event Dresses"
     },
     {
-      image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1600&h=900&fit=crop",
+      image: "https://images.unsplash.com/photo-1676293038938-e9b489e47587?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "Casual Comfort",
       subtitle: "Effortless style for everyday elegance",
       cta: "View Casual Wear"
     },
     {
-      image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=1600&h=900&fit=crop",
+      image: "https://images.unsplash.com/photo-1674508534527-a6834b3940b6?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       title: "New Arrivals",
       subtitle: "Fresh styles just for you",
       cta: "Discover Now"
